@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,19 @@
     <title>DENNOU</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PKVJV6WFG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6PKVJV6WFG');
+    </script>
 </head>
+
 <body>
     <div class="wrapper">
-        <header>
-            <div class="container header-container">
-                <div class="logo">
-                    <h1>DENNOU</h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#">ホーム</a></li>
-                        <li><a href="#">デザイン</a></li>
-                        <li><a href="#">テクノロジー</a></li>
-                        <li><a href="#">旅行</a></li>
-                    </ul>
-                </nav>
-                <!-- トグルボタン：初期は三日月 -->
-                <button id="mode-toggle" aria-label="ダークモード切替">🌙</button>
-            </div>
-        </header>
+        <div id="header-include"></div>
 
         <section class="hero">
             <div class="hero-placeholder">
@@ -41,13 +35,13 @@
             <div class="container">
                 <section class="posts">
                     <article class="post">
-                        <h2>Modern Design Inspiration（サンプル記事）</h2>
-                        <div class="post-image-placeholder">Image Placeholder（サンプル画像）</div>
-                        <p class="post-meta">投稿日: 2025-04-15（サンプル日付）</p>
+                        <h2>Python入門：シンプルでパワフルなプログラミング言語</h2>
+                        <div class="post-image-python"><span>Python</span></div>
+                        <p class="post-meta">投稿日: 2025-04-15</p>
                         <p>
-                            この記事はサンプルです。最先端のデザインのアイデアやインスピレーションについてご紹介します。シンプルで美しいデザインのヒントを探してみましょう。
+                            Pythonはシンプルな文法と高い可読性で人気のプログラミング言語です。初心者からプロフェッショナルまで幅広く使われており、Web開発・データ分析・AIなど多彩な分野で活躍しています。本記事ではPythonの特徴や活用例をわかりやすく解説します。
                         </p>
-                        <a href="#">続きを読む（サンプルリンク）</a>
+                        <a href="python-intro.html">続きを読む</a>
                     </article>
                     <article class="post">
                         <h2>Tech Innovations Today（サンプル記事）</h2>
@@ -70,56 +64,14 @@
                 </section>
 
                 <aside class="sidebar">
-                    <div class="profile">
-                        <div class="profile-avatar">
-                            <img src="https://avatars.githubusercontent.com/u/206489032?v=4" alt="電脳孤影のアイコン" width="104" height="104" />
-                        </div>
-                        <p class="profile-name">電脳孤影</p>
-                        <p class="profile-title">Webデザイナー / フロントエンドエンジニア</p>
-                        <p class="profile-desc">
-                            こんにちは！Webデザインとテクノロジーに情熱を注ぐ電脳孤影です。<br>
-                            UI/UX・アクセシビリティ・マテリアルデザイン・モダンなWeb体験が大好き。<br>
-                            新しい技術やデザインのトレンドを追いかけながら、<br>
-                            使いやすく美しいWebサイトを作ることを目指しています。<br>
-                            <span class="profile-keywords">#React #Next.js #Figma #MaterialDesign #Accessibility</span>
-                        </p>
-                        <div class="profile-links">
-                            <a href="#" class="profile-link">○</a>
-                            <a href="#" class="profile-link">○</a>
-                        </div>
-                    </div>
+                    <div id="profile-include"></div>
                 </aside>
             </div>
         </main>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 DENNOU. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-      const modeToggle = document.getElementById('mode-toggle');
-      const body = document.body;
-      // 初期表示
-      function updateIcon() {
-        if (body.classList.contains('dark-mode')) {
-          modeToggle.textContent = '☀️';
-          modeToggle.classList.remove('moon');
-          modeToggle.classList.add('sun');
-        } else {
-          modeToggle.textContent = '🌙';
-          modeToggle.classList.remove('sun');
-          modeToggle.classList.add('moon');
-        }
-      }
-      modeToggle.addEventListener('click', function(){
-          body.classList.toggle('dark-mode');
-          updateIcon();
-      });
-      // ページロード時もアイコンを正しく
-      updateIcon();
-    </script>
+    <div id="footer-include"></div>
+    <script src="main.js"></script>
 </body>
+
 </html>

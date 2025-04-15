@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python入門：シンプルでパワフルなプログラミング言語</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PKVJV6WFG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6PKVJV6WFG');
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header-include"></div>
+        <main>
+            <div class="container">
+                <section class="posts">
+                    <article class="post">
+                        <h2>Python入門：シンプルでパワフルなプログラミング言語</h2>
+                        <div class="post-image-python"><span>Python</span></div>
+                        <p class="post-meta">投稿日: 2025-04-15</p>
+                        <p>
+                            Pythonは、1991年にオランダ人のグイド・ヴァンロッサムによって開発された、シンプルでパワフルなプログラミング言語です。その最大の特徴は「読みやすさ」と「書きやすさ」。インデントによる構造化や、自然言語に近い文法のおかげで、初心者でも直感的にコードを書くことができます。<br><br>
+                            PythonはWeb開発、データ分析、AI・機械学習、IoT、教育など、さまざまな分野で活用されています。たとえばWebアプリケーションの開発ではDjangoやFlaskといったフレームワークが有名です。データ分析や科学技術計算の分野では、PandasやNumPy、Matplotlibなどの豊富なライブラリが用意されており、少ないコードで高度な処理が可能です。<br><br>
+                            また、AI・機械学習の分野ではTensorFlowやPyTorch、scikit-learnなどの強力なツールが揃っており、世界中の研究者やエンジニアがPythonを使って最先端の技術開発を行っています。自動化やスクレイピング、業務効率化のためのツール作成にもPythonは最適です。<br><br>
+                            Pythonのコミュニティは非常に活発で、世界中で多くのイベントや勉強会が開催されています。公式ドキュメントや日本語の解説記事も充実しており、困ったときにすぐに情報を得られるのも大きな魅力です。<br><br>
+                            さらに、PythonはWindows・macOS・Linuxなど主要なOSで動作し、環境構築も比較的簡単です。Jupyter Notebookを使えば、ブラウザ上でインタラクティブにコードを書きながらデータ分析や可視化を行うこともできます。<br><br>
+                            これからプログラミングを始めたい方、業務の自動化やデータ活用に挑戦したい方、AIや機械学習に興味がある方など、Pythonはあらゆるレベル・目的の人におすすめできる言語です。ぜひ一度、Pythonの世界に触れてみてください。
+                        </p>
+                        <h3>Pythonの基本文法とデータ型</h3>
+                        <p>
+                            Pythonの文法は非常にシンプルです。たとえば「Hello, World!」を表示するには、次のように書きます。
+                        </p>
+                        <pre><code>print("Hello, World!")</code></pre>
+                        <p>
+                            変数宣言も型指定が不要で、直感的に書けます。
+                        </p>
+                        <pre><code>x = 10
+y = 3.14
+name = "Python"
+flag = True</code></pre>
+                        <p>
+                            主なデータ型には、整数（int）、浮動小数点数（float）、文字列（str）、真偽値（bool）、リスト（list）、辞書（dict）、タプル（tuple）、集合（set）などがあります。
+                        </p>
+                        <h3>制御構文（if文・for文・while文）</h3>
+                        <p>
+                            Pythonの制御構文もシンプルです。インデントでブロックを表現します。
+                        </p>
+                        <pre><code># if文の例
+score = 85
+if score >= 80:
+    print("合格です！")
+else:
+    print("不合格です…")
+
+# for文の例
+for i in range(5):
+    print(i)
+
+# while文の例
+count = 0
+while count < 3:
+    print("カウント:", count)
+    count += 1</code></pre>
+                        <h3>関数定義とクラス</h3>
+                        <p>
+                            関数はdefで定義します。クラスもシンプルに書けます。
+                        </p>
+                        <pre><code># 関数の例
+def greet(name):
+    return f"こんにちは、{name}さん！"
+
+print(greet("電脳孤影"))
+
+# クラスの例
+class Dog:
+    def __init__(self, name):
+        self.name = name
+    def bark(self):
+        print(f"{self.name}：ワンワン！")
+
+pochi = Dog("ポチ")
+pochi.bark()</code></pre>
+                        <h3>リスト・辞書・内包表記</h3>
+                        <p>
+                            リストや辞書はPythonの強力なデータ構造です。内包表記を使うと、簡潔にリストや辞書を生成できます。
+                        </p>
+                        <pre><code># リスト
+fruits = ["りんご", "バナナ", "みかん"]
+for fruit in fruits:
+    print(fruit)
+
+# 辞書
+d = {"A": 90, "B": 80, "C": 70}
+for key, value in d.items():
+    print(key, value)
+
+# リスト内包表記
+squares = [x**2 for x in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]</code></pre>
+                        <h3>標準ライブラリとサードパーティライブラリ</h3>
+                        <p>
+                            Pythonには便利な標準ライブラリが多数用意されています。たとえば日付操作や乱数生成、ファイル操作などが簡単に行えます。
+                        </p>
+                        <pre><code>import datetime
+now = datetime.datetime.now()
+print(now)
+
+import random
+print(random.randint(1, 10))
+
+with open("sample.txt", "w") as f:
+    f.write("Hello, Python!")</code></pre>
+                        <p>
+                            さらに、pipコマンドでインストールできるサードパーティライブラリも豊富です。データ分析ならpandasやnumpy、Web開発ならFlaskやDjango、AIならTensorFlowやPyTorchなど、用途に応じて最適なツールが選べます。
+                        </p>
+                        <h3>実践例1：Webアプリケーション</h3>
+                        <p>
+                            Flaskを使えば、数行でWebアプリの雛形が作れます。
+                        </p>
+                        <pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello, Flask!"
+
+if __name__ == "__main__":
+    app.run(debug=True)</code></pre>
+                        <h3>実践例2：データ分析・可視化</h3>
+                        <p>
+                            pandasやmatplotlibを使えば、データの集計やグラフ描画も簡単です。
+                        </p>
+                        <pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {"年": [2022, 2023, 2024], "売上": [100, 150, 200]}
+df = pd.DataFrame(data)
+print(df)
+df.plot(x="年", y="売上", kind="bar")
+plt.show()</code></pre>
+                        <h3>実践例3：自動化・スクレイピング</h3>
+                        <p>
+                            requestsやBeautifulSoupを使えば、Webサイトからデータを取得して自動処理できます。
+                        </p>
+                        <pre><code>import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.example.com"
+r = requests.get(url)
+soup = BeautifulSoup(r.text, "html.parser")
+print(soup.title.text)</code></pre>
+                        <h3>まとめ</h3>
+                        <p>
+                            Pythonは「書いて楽しい」「動かして楽しい」言語です。シンプルな文法と豊富なライブラリ、そして活発なコミュニティによって、初心者からプロフェッショナルまで幅広く支持されています。あなたもぜひ、Pythonで新しい世界を切り拓いてみませんか？<br><br>
+                            公式ドキュメントやチュートリアルも充実しているので、まずは手を動かしてみることをおすすめします。<br><br>
+                        </p>
+                        <div class="external-link-group">
+                          <a href="https://www.python.org/" class="external-link" target="_blank">
+                            Python公式サイト <span class="external-icon">↗</span>
+                          </a>
+                          <a href="https://docs.python.org/ja/3/tutorial/" class="external-link" target="_blank">
+                            日本語チュートリアル <span class="external-icon">↗</span>
+                          </a>
+                        </div>
+                    </article>
+                </section>
+                <aside class="sidebar">
+                    <div id="profile-include"></div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <div id="footer-include"></div>
+    <script src="main.js"></script>
+</body>
+</html>
