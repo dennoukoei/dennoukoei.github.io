@@ -24,16 +24,20 @@ description: >- # this means to ignore newlines until "baseurl:"
   技術情報やプログラミングのヒントを共有する技術ブログです。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: yourusername
+twitter_username: dennoukoei
 github_username:  dennoukoei
 
 # Build settings
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes@4.24.0
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
 
 # Minimal Mistakes settings
 locale: "ja-JP"
