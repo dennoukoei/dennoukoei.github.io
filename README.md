@@ -87,14 +87,6 @@ toc: true
 
 プルリクエストは歓迎します。大きな変更を加える場合は、まず問題点について議論するための Issue を開いてください。
 
-## ライセンス
-
-このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
-
-## 著者
-
-- **電脳狐影** - [GitHub](https://github.com/dennoukoei) | [Twitter](https://twitter.com/dennoukoei)
-
 ---
 
 <p align="center">Built with ❤️ using <b>Jekyll</b> and <b>GitHub Pages</b></p>
