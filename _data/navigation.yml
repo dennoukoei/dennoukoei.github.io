@@ -1,0 +1,11 @@
+main:
+  - title: "ホーム"
+    url: /
+  - title: "カテゴリー"
+    url: /categories/
+  - title: "タグ"
+    url: /tags/
+  - title: "アーカイブ"
+    url: /year-archive/
+  - title: "プロフィール"
+    url: /about/
