@@ -1,47 +1,28 @@
-// OKLCHテーマ切り替え機能 - GitHub Pages 互換バージョン
+// シンプル化したテーマ切り替え - GitHub Pages互換
 document.addEventListener('DOMContentLoaded', function() {
-  // ユーザーの設定またはシステムの設定に基づいて初期テーマを決定
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  // 初期テーマの設定
   const currentTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  // テーマの初期設定
   if (currentTheme === 'light') {
     document.body.classList.add('light-theme');
-  } else if (currentTheme === 'dark') {
+  } else if (currentTheme === 'dark' || prefersDark) {
     document.body.classList.add('dark-theme');
   } else {
-    // ユーザー設定がなければ、システム設定に基づく
-    if (prefersDarkScheme.matches) {
-      document.body.classList.add('dark-theme');
-    } else {
-      document.body.classList.add('light-theme');
-    }
+    document.body.classList.add('light-theme'); // デフォルトはライトテーマ
   }
   
-  // DOM要素が揃ってからテーマ切り替えボタンを追加
-  setTimeout(function() {
-    addThemeSwitcher();
-  }, 500);
-  
-  function addThemeSwitcher() {
-    // ヘッダー要素を取得
-    const header = document.querySelector('.masthead');
-    if (!header) return;
+  // テーマ切り替えボタンを作成
+  const header = document.querySelector('.masthead');
+  if (header) {
+    const btn = document.createElement('button');
+    btn.className = 'theme-switcher';
+    btn.innerHTML = '<i class="fas fa-adjust"></i>';
+    btn.title = 'テーマ切り替え';
+    header.appendChild(btn);
     
-    // 既存のスイッチャーを確認
-    if (document.querySelector('.theme-switcher')) return;
-    
-    // テーマ切り替えボタンを作成
-    const switcherButton = document.createElement('button');
-    switcherButton.setAttribute('class', 'theme-switcher');
-    switcherButton.setAttribute('title', 'テーマの切り替え');
-    switcherButton.innerHTML = '<i class="fas fa-adjust"></i>';
-    
-    // ボタンをヘッダーに追加
-    header.appendChild(switcherButton);
-    
-    // クリックイベントリスナーを追加
-    switcherButton.addEventListener('click', function() {
+    // テーマ切り替えの処理
+    btn.addEventListener('click', function() {
       if (document.body.classList.contains('dark-theme')) {
         document.body.classList.remove('dark-theme');
         document.body.classList.add('light-theme');
@@ -53,17 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // ボタンのスタイルを追加
-    addSwitcherStyles();
-  }
-  
-  function addSwitcherStyles() {
-    // 既存のスタイルを確認
-    if (document.querySelector('#theme-switcher-styles')) return;
-    
-    const styleEl = document.createElement('style');
-    styleEl.setAttribute('id', 'theme-switcher-styles');
-    styleEl.textContent = `
+    // スタイル追加
+    const style = document.createElement('style');
+    style.textContent = `
       .theme-switcher {
         position: absolute;
         top: 1rem;
@@ -73,24 +46,19 @@ document.addEventListener('DOMContentLoaded', function() {
         color: inherit;
         font-size: 1.5rem;
         cursor: pointer;
-        padding: 0.25rem;
-        border-radius: 50%;
-        z-index: 100;
+        z-index: 10;
         opacity: 0.8;
-        transition: transform 0.3s ease, opacity 0.3s ease;
       }
       .theme-switcher:hover {
-        transform: rotate(180deg);
         opacity: 1;
       }
       @media (max-width: 768px) {
         .theme-switcher {
           top: 0.5rem;
-          right: 5rem;
-          font-size: 1.2rem;
+          right: 4rem;
         }
       }
     `;
-    document.head.appendChild(styleEl);
+    document.head.appendChild(style);
   }
 });

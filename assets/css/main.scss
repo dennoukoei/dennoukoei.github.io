@@ -8,44 +8,5 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes"; // main partials
 
-/* カスタムのOKLCHスタイルを読み込む */
+/* カスタムスタイルを読み込む (カスタムCSSは末尾に配置) */
 @import "custom/oklch";
-
-/* テーマ拡張スタイル */
-.page__content {
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--color-primary-dark);
-  }
-}
-
-/* リンクのスタイル強化 */
-a {
-  &:hover {
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-}
-
-/* コードブロックのスタイル強化 */
-div.highlighter-rouge, figure.highlight {
-  border-radius: 5px;
-  background-color: var(--color-bg-dark);
-  border-color: var(--color-primary-dark);
-}
-
-/* ナビゲーションメニューの強調 */
-.greedy-nav {
-  a {
-    &:hover {
-      color: var(--color-accent-light);
-    }
-  }
-  
-  .visible-links {
-    a {
-      &:before {
-        background: var(--color-primary);
-      }
-    }
-  }
-}
