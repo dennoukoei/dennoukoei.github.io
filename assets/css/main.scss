@@ -4,24 +4,24 @@
 
 @charset "utf-8";
 
-/* OKLCHスキンを読み込む（ダークモード） */
+/* テーマのスキンを読み込む */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes"; // main partials
 
-/* カスタムOKLCHスタイルを読み込む */
+/* カスタムのOKLCHスタイルを読み込む */
 @import "custom/oklch";
 
-/* Minimal Mistakesテーマを拡張するためのOKLCHスタイル */
+/* テーマ拡張スタイル */
 .page__content {
   h1, h2, h3, h4, h5, h6 {
-    color: oklch(45% 0.25 240);
+    color: var(--color-primary-dark);
   }
 }
 
-/* リンクのホバー効果を強化 */
+/* リンクのスタイル強化 */
 a {
   &:hover {
-    color: oklch(65% 0.25 45);
+    color: var(--color-accent);
     text-decoration: none;
   }
 }
@@ -29,22 +29,22 @@ a {
 /* コードブロックのスタイル強化 */
 div.highlighter-rouge, figure.highlight {
   border-radius: 5px;
-  background-color: oklch(20% 0.02 240);
-  border-color: oklch(45% 0.25 240);
+  background-color: var(--color-bg-dark);
+  border-color: var(--color-primary-dark);
 }
 
 /* ナビゲーションメニューの強調 */
 .greedy-nav {
   a {
     &:hover {
-      color: oklch(75% 0.2 45);
+      color: var(--color-accent-light);
     }
   }
   
   .visible-links {
     a {
       &:before {
-        background: oklch(65% 0.2 240);
+        background: var(--color-primary);
       }
     }
   }

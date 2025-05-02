@@ -1,79 +1,104 @@
 ---
 ---
 
-/* OKLCH カラー変数の定義 */
+/* OKLCH互換性対応版 */
 :root {
-  /* メインカラー */
-  --oklch-primary: oklch(65% 0.2 240);
-  --oklch-primary-light: oklch(75% 0.15 240);
-  --oklch-primary-dark: oklch(45% 0.25 240);
+  /* カスタム変数の定義（CSS変数を使用）*/
+  --color-primary: #2563eb;         /* 青色相当 */
+  --color-primary-light: #60a5fa;   /* 明るい青 */
+  --color-primary-dark: #1e40af;    /* 暗い青 */
   
-  /* アクセントカラー */
-  --oklch-accent: oklch(65% 0.25 45);
-  --oklch-accent-light: oklch(75% 0.2 45);
-  --oklch-accent-dark: oklch(55% 0.3 45);
+  --color-accent: #f59e0b;          /* オレンジ色相当 */
+  --color-accent-light: #fcd34d;    /* 明るいオレンジ */
+  --color-accent-dark: #d97706;     /* 暗いオレンジ */
   
   /* テキストカラー */
-  --oklch-text: oklch(20% 0.02 240);
-  --oklch-text-light: oklch(90% 0.02 240);
+  --color-text: #1f2937;            /* 標準テキスト */
+  --color-text-light: #f3f4f6;      /* 明るいテキスト */
   
   /* 背景カラー */
-  --oklch-bg-dark: oklch(25% 0.05 240);
-  --oklch-bg-light: oklch(95% 0.03 240);
+  --color-bg-dark: #111827;         /* 暗い背景 */
+  --color-bg-light: #f9fafb;        /* 明るい背景 */
 }
 
-/* ダークモード用の変数 */
+/* モダンブラウザ向けOKLCH変数（フォールバック後に適用）*/
+@supports (color: oklch(0% 0 0)) {
+  :root {
+    --color-primary: oklch(65% 0.2 240);
+    --color-primary-light: oklch(75% 0.15 240);
+    --color-primary-dark: oklch(45% 0.25 240);
+    
+    --color-accent: oklch(65% 0.25 45);
+    --color-accent-light: oklch(75% 0.2 45);
+    --color-accent-dark: oklch(55% 0.3 45);
+    
+    --color-text: oklch(20% 0.02 240);
+    --color-text-light: oklch(90% 0.02 240);
+    
+    --color-bg-dark: oklch(25% 0.05 240);
+    --color-bg-light: oklch(95% 0.03 240);
+  }
+}
+
+/* ダークテーマ */
 .dark-theme {
-  /* 既存の変数をオーバーライド */
-  --background-color: var(--oklch-bg-dark);
-  --text-color: var(--oklch-text-light);
-  --link-color: var(--oklch-primary-light);
-  --link-color-hover: var(--oklch-primary);
+  --bg-color: var(--color-bg-dark);
+  --text-color: var(--color-text-light);
+  --link-color: var(--color-primary-light);
+  --link-hover-color: var(--color-primary);
   
-  /* ボタンとナビゲーション */
-  .btn, .nav__item {
-    background-color: var(--oklch-primary-dark);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  
+  a {
+    color: var(--link-color);
+    
     &:hover {
-      background-color: var(--oklch-primary);
+      color: var(--link-hover-color);
     }
   }
   
-  /* 見出し */
   h1, h2, h3, h4, h5, h6 {
-    color: var(--oklch-primary-light);
+    color: var(--color-primary-light);
   }
   
-  /* アクセント要素 */
-  .notice, .page__meta, .pagination--pager {
-    background-color: var(--oklch-bg-dark);
-    border-color: var(--oklch-primary);
-  }
-  
-  /* コードブロック */
   code {
-    background-color: oklch(20% 0.03 240);
-  }
-  
-  /* サイドバー */
-  .sidebar {
-    background-color: var(--oklch-bg-dark);
-    border-right: 1px solid var(--oklch-primary-dark);
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-primary-dark);
   }
 }
 
-/* ライトモード用の変数 */
+/* ライトテーマ */
 .light-theme {
-  --background-color: var(--oklch-bg-light);
-  --text-color: var(--oklch-text);
-  --link-color: var(--oklch-primary-dark);
-  --link-color-hover: var(--oklch-primary);
+  --bg-color: var(--color-bg-light);
+  --text-color: var(--color-text);
+  --link-color: var(--color-primary);
+  --link-hover-color: var(--color-primary-dark);
   
-  /* 以下同様にライトモード用のスタイルを定義 */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  
+  a {
+    color: var(--link-color);
+    
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary-dark);
+  }
+  
+  code {
+    background-color: var(--color-bg-light);
+    border-color: var(--color-primary-light);
+  }
 }
 
-/* アニメーション効果 */
-.btn, .nav__item, a {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* トランジション効果 */
+.btn, a, .masthead, .nav__item {
+  transition: all 0.3s ease;
 }
 
 /* グラデーション効果 */
@@ -88,5 +113,5 @@
 /* ホバーエフェクト */
 a:hover {
   text-decoration: none;
-  color: var(--oklch-accent);
+  color: var(--color-accent);
 }
