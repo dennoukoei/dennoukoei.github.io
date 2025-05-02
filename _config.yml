@@ -32,12 +32,36 @@ github_username:  dennoukoei
 remote_theme: mmistakes/minimal-mistakes@4.24.0
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+# アセットパスの明示的な設定
+assets:
+  css_path: /assets/css
+  js_path: /assets/js
+
+# プラグイン設定
 plugins:
+  - jekyll-include-cache  # 最優先（remote themeに必要）
   - jekyll-feed
-  - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
+
+# ページネーション設定
+paginate: 5
+paginate_path: /page:num/
+
+# 日時フォーマット設定
+date_format: "%Y年%m月%d日"
+datetime_format: "%Y年%m月%d日 %H:%M"
+
+# メタデータ関連設定
+twitter:
+  username: dennoukoei
+
+social:
+  type: Person
+  links:
+    - "https://twitter.com/dennoukoei"
+    - "https://github.com/dennoukoei"
 
 # Minimal Mistakes settings
 locale: "ja-JP"
