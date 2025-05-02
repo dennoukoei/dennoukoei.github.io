@@ -1,0 +1,92 @@
+---
+---
+
+/* OKLCH カラー変数の定義 */
+:root {
+  /* メインカラー */
+  --oklch-primary: oklch(65% 0.2 240);
+  --oklch-primary-light: oklch(75% 0.15 240);
+  --oklch-primary-dark: oklch(45% 0.25 240);
+  
+  /* アクセントカラー */
+  --oklch-accent: oklch(65% 0.25 45);
+  --oklch-accent-light: oklch(75% 0.2 45);
+  --oklch-accent-dark: oklch(55% 0.3 45);
+  
+  /* テキストカラー */
+  --oklch-text: oklch(20% 0.02 240);
+  --oklch-text-light: oklch(90% 0.02 240);
+  
+  /* 背景カラー */
+  --oklch-bg-dark: oklch(25% 0.05 240);
+  --oklch-bg-light: oklch(95% 0.03 240);
+}
+
+/* ダークモード用の変数 */
+.dark-theme {
+  /* 既存の変数をオーバーライド */
+  --background-color: var(--oklch-bg-dark);
+  --text-color: var(--oklch-text-light);
+  --link-color: var(--oklch-primary-light);
+  --link-color-hover: var(--oklch-primary);
+  
+  /* ボタンとナビゲーション */
+  .btn, .nav__item {
+    background-color: var(--oklch-primary-dark);
+    &:hover {
+      background-color: var(--oklch-primary);
+    }
+  }
+  
+  /* 見出し */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--oklch-primary-light);
+  }
+  
+  /* アクセント要素 */
+  .notice, .page__meta, .pagination--pager {
+    background-color: var(--oklch-bg-dark);
+    border-color: var(--oklch-primary);
+  }
+  
+  /* コードブロック */
+  code {
+    background-color: oklch(20% 0.03 240);
+  }
+  
+  /* サイドバー */
+  .sidebar {
+    background-color: var(--oklch-bg-dark);
+    border-right: 1px solid var(--oklch-primary-dark);
+  }
+}
+
+/* ライトモード用の変数 */
+.light-theme {
+  --background-color: var(--oklch-bg-light);
+  --text-color: var(--oklch-text);
+  --link-color: var(--oklch-primary-dark);
+  --link-color-hover: var(--oklch-primary);
+  
+  /* 以下同様にライトモード用のスタイルを定義 */
+}
+
+/* アニメーション効果 */
+.btn, .nav__item, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* グラデーション効果 */
+.page__hero--overlay {
+  background-image: linear-gradient(
+    to bottom,
+    oklch(30% 0.2 240),
+    oklch(20% 0.15 240)
+  );
+}
+
+/* ホバーエフェクト */
+a:hover {
+  text-decoration: none;
+  color: var(--oklch-accent);
+}
